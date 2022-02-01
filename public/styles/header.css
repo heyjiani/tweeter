@@ -3,7 +3,7 @@ header {
   width: 100%;
   padding-top: 500px;
   background-color: rgb(158, 201, 182);
-  background-image: url("./background-img/foggy-birds.png");
+  background-image: url("../images/foggy-birds.png");
   display: flex;
   justify-content: flex-end;
   flex-direction: column;
