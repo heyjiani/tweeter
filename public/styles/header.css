@@ -1,0 +1,11 @@
+header {
+  height: 400px;
+  width: 100%;
+  padding-top: 500px;
+  background-color: rgb(158, 201, 182);
+  background-image: url("./background-img/foggy-birds.png");
+  display: flex;
+  justify-content: flex-end;
+  flex-direction: column;
+  align-items: center;
+}
