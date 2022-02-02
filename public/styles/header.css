@@ -1,8 +1,8 @@
-header {
+header.main-header {
   height: 400px;
   width: 100%;
   padding-top: 500px;
-  background-color: rgb(158, 201, 182);
+  background-color: #9ec9b6;
   background-image: url("../images/foggy-birds.png");
   display: flex;
   justify-content: flex-end;
