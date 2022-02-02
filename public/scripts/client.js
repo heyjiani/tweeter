@@ -29,7 +29,7 @@ const createTweetElement = function (tweet) {
   $header.append($avatars, $name, $handle);
 
   //footer elements
-  const $timeCreated = $('<time>').text(tweet.created_at);
+  const $timeCreated = $('<time>').text(timeago.format(tweet.created_at));
   const $icons = $(`
     <div class="icons">
       <i class="fa-solid fa-flag"></i>
