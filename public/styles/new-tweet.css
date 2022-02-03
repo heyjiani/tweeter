@@ -33,6 +33,10 @@
   resize: none;
 }
 
+#tweet-text:focus {
+  outline: none;
+}
+
 .btn-and-counter {
   font-family: "Bungee", sans-serif;
   margin-top: 0.5em;
