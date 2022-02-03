@@ -73,9 +73,19 @@ $('#submit-new-tweet').on('submit', function (event) {
   event.preventDefault();
   console.log('Submitting tweet ...');
 
+  //validation criteria: tweet must be between 0 and 140 characters.
+  const textLength = $('#tweet-text').val().length;
+  if (textLength <= 0) {
+    console.log('Failure: Tweet field is empty!!');
+    return alert('Tweet cannot be empty!');
+  }
+  if (textLength > 140) {
+    console.log('Failure: Max character length exceeded!');
+    return alert('Tweet must be under 140 characters!');
+  }
+
   //convert set of form data into query string
   const data = $(this).serialize();
-
   $.ajax({
     url: '/tweets',
     method: 'POST',
