@@ -16,4 +16,5 @@ $(document).ready(function() {
     $(tweetCounter).css("color", "#545149");
 
   });
+
 });
