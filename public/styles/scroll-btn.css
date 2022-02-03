@@ -1,0 +1,23 @@
+#scroll-to-top {
+  height: 3.5em;
+  width: 3.5em;
+  position: fixed;
+  bottom: 50px;
+  right: 40px;
+  padding: 1em;
+  background-color: #d84a31;
+  color: white;
+  opacity: 90%;
+  border: none;
+  border-radius: 50%;
+
+}
+
+#scroll-to-top:hover {
+  background-color: #eb490e;
+  transform: scale(1.1);
+}
+
+#scroll-to-top:focus {
+  background-color: #d84a31;
+}
