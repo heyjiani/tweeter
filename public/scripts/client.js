@@ -83,6 +83,9 @@ $(() => {
       return ;
     }
 
+    //reset character counter
+    $('.counter').val('140');
+
     //convert set of form data into query string
     const data = $(this).serialize();
     $.ajax({
