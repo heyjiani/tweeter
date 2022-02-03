@@ -30,3 +30,15 @@
   display: flex;
   justify-content: space-between;
 }
+
+.error-empty, .error-limit {
+  width: fit-content;
+  margin: 0.5em;
+  padding: 0.5em;
+  color: #ad3a6a;
+  background-color: #f4d8d8;
+  border: 2px solid #ad3a6a;
+  border-radius: 5px;
+  font-size: 15px;
+  font-style: italic;
+}
