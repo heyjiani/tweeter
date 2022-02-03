@@ -30,7 +30,6 @@ const createTweetElement = function (tweet) {
 
   //header elements
   const $avatars = $(`<img src="${tweet.user.avatars}" alt="">`);
-  console.log('avatar is', $avatars)
   const $name = $('<span>').addClass('user-name').text(tweet.user.name);
   const $handle = $('<span>').addClass('user-handle').text(tweet.user.handle);
   const $tweetText = $('<p>').addClass('posted-tweet').text(tweet.content.text);
@@ -59,17 +58,32 @@ const createTweetElement = function (tweet) {
 };
 
 //take in array of tweet objs and append each one to .tweet-container
-const $tweetContainer = $('.tweet-container');
-
 const renderTweets = function(listOfTweets) {
+    const $tweetContainer = $('.tweet-container');
 
-  for (const tweet of listOfTweets) {
-    const $tweet = createTweetElement(tweet);
-    $tweetContainer.append($tweet);
-  }
-  return $tweetContainer;
-
+    for (const tweet of listOfTweets) {
+      const $tweet = createTweetElement(tweet);
+      $tweetContainer.append($tweet);
+    }
+    return $tweetContainer;
 };
+
+//event listener for submitting new tweet form
+$('#submit-new-tweet').on('submit', function (event) {
+  event.preventDefault();
+  console.log('The tweet has been submitted...');
+
+  //convert set of form data into query string
+  const data = $(this).serialize();
+
+  $.ajax({
+    url: '/tweets',
+    method: 'POST',
+    data: data
+  }).then(() => {
+    console.log('tweet submitted successfully!')
+  })
+})
 
 renderTweets(data);
 
