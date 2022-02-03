@@ -1,5 +1,9 @@
 $(() => {
 
+  //hide error fields
+  $('.error-limit').hide();
+  $('.error-empty').hide();
+
   //takes in tweet obj and returns tweet <article> element
   const createTweetElement = function (tweet) {
 
@@ -59,17 +63,24 @@ $(() => {
   //event listener for submitting new tweet form
   $('#submit-new-tweet').on('submit', function (event) {
     event.preventDefault();
-    console.log('Submitting tweet ...');
+
+    //slide existing errors back up upon resubmission
+    $('.error-empty').slideUp(250);
+    $('.error-limit').slideUp(250);
 
     //validation criteria: tweet must be between 0 and 140 characters.
+    //display errors for empty field
     const textLength = $('#tweet-text').val().length;
     if (textLength <= 0) {
-      console.log('Failure: Tweet field is empty!!');
-      return alert('Tweet cannot be empty!');
+      $('.error-limit').hide();
+      $('.error-empty').slideDown(250);
+      return;
     }
+    //display errors for when character limit is exceeded
     if (textLength > 140) {
-      console.log('Failure: Max character length exceeded!');
-      return alert('Tweet must be under 140 characters!');
+      $('.error-empty').hide();
+      $('.error-limit').slideDown(250);
+      return ;
     }
 
     //convert set of form data into query string
@@ -79,7 +90,6 @@ $(() => {
       method: 'POST',
       data: data
     }).then(() => {
-      console.log('tweet submitted successfully!');
       $('#tweet-text').val('');
       loadTweets();
     })
