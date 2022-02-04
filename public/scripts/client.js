@@ -1,9 +1,5 @@
 $(() => {
 
-  //hide error fields
-  $('.error-limit').hide();
-  $('.error-empty').hide();
-
   //takes in tweet obj and returns tweet <article> element
   const createTweetElement = function (tweet) {
 
@@ -60,6 +56,7 @@ $(() => {
 
   loadTweets();
 
+
   //event listener for submitting new tweet form
   $('#submit-new-tweet').on('submit', function (event) {
     event.preventDefault();
@@ -93,11 +90,9 @@ $(() => {
       method: 'POST',
       data: data
     }).then(() => {
-      $('#tweet-text').val('');
+      $('#tweet-text').val('').focus();
       loadTweets();
     })
-
-    $('#tweet-text').focus();
   })
 
 });
