@@ -1,7 +1,6 @@
 nav {
   height: 120px;
   width: 100%;
-  /* background-color: #4056A1; */
   background-color: transparent;
   color: #FFFFFF;
   padding: 0 1.5em 0 1.5em;
@@ -16,16 +15,10 @@ nav {
 nav > span {
   font-family: "Bungee", sans-serif;
   font-size: 50px;
-  /* position: fixed; */
 }
 
 nav i {
   color: #ebb287;
-}
-
-.nav-links {
-  position: absolute;
-  right: 2em;
 }
 
 #compose {
@@ -50,10 +43,6 @@ nav i {
   color: #d84a31;
 }
 
-/* .fa-kiwi-bird {
-  display: none;
-} */
-
 @media only screen and (min-width: 1024px) {
 
   nav {
@@ -61,15 +50,3 @@ nav i {
   }
   
 }
-
-/* @media only screen and (max-width: 768px) {
-
-  nav>span {
-    display: none;
-  }
-
-  .fa-kiwi-bird {
-    display: block;
-    color: white;
-  }
-} */
