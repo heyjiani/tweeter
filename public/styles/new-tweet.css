@@ -1,3 +1,8 @@
+/* set field default state to hidden */
+.new-tweet{
+  display: none;
+}
+
 .submit-button {
   position: relative;
   top: 0;
