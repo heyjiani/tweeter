@@ -49,3 +49,27 @@ nav i {
   animation-iteration-count: infinite;
   color: #d84a31;
 }
+
+/* .fa-kiwi-bird {
+  display: none;
+} */
+
+@media only screen and (min-width: 1024px) {
+
+  nav {
+    background-color: #4056A1;
+  }
+  
+}
+
+/* @media only screen and (max-width: 768px) {
+
+  nav>span {
+    display: none;
+  }
+
+  .fa-kiwi-bird {
+    display: block;
+    color: white;
+  }
+} */

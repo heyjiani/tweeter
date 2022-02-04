@@ -3,7 +3,9 @@
   width: 100%;
   /* padding-top: 500px; */
   padding: 2em 0 0.7em 0;
+  /* float: left; */
   background-color: #9ec9b6;
+  color: #FFFFFF;
   background-image: url("../images/foggy-birds.png");
   display: flex;
   justify-content: flex-end;
@@ -17,4 +19,15 @@
 
 .main-header > h2 {
   font-weight: unset;
+}
+
+@media only screen and (min-width: 1024px) {
+
+  .main-header {
+    width: 25%;
+    position: sticky;
+    top: 10em;
+    margin: 2em;
+  }
+  
 }
