@@ -96,6 +96,8 @@ $(() => {
       $('#tweet-text').val('');
       loadTweets();
     })
+
+    $('#tweet-text').focus();
   })
 
 });
