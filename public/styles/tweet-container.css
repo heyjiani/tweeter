@@ -77,3 +77,12 @@ article.tweet footer .fa-heart {
 article.tweet footer .fa-heart:hover {
   color: #9d3522
 }
+
+.page-end {
+  width: 100%;
+  padding: 1em 0 2.5em 0;
+  text-align: right;
+  color: #545149;
+  font-size: 0.5em;
+  font-style: italic;
+}
