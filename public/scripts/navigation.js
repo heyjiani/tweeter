@@ -1,10 +1,10 @@
 $(() => {
 
+  $('.new-tweet').hide();
   //scroll to and focus on tweet input when 'Write a new tweet' is clicked
-  $('#compose').on('click', () => {
-    $('html, body').animate({
-      scrollTop: $('.container').offset().top - 150
-    }, 700);
+  $('#compose').on('click', function() {
+    $('.new-tweet').toggle("slow");
+    $('i', this).toggleClass("fa-angles-down fa-angles-up");
     $('#tweet-text').focus();
   });
 
@@ -12,19 +12,22 @@ $(() => {
   //default: hide button
   const $toTop = $('#scroll-to-top');
   $toTop.hide();
-  //scroll back to the top and enable textarea input
+
+  //hide and show scroll and new tweet buttons depending on page position
   $(window).scroll(function () {
-    if ($(this).scrollTop() > 50) {
-      $toTop.stop().fadeIn(500);
-    } else {
-      $toTop.stop().fadeOut();
-    }
+    if ($(this).scrollTop() > 100) {
+      $('#compose').stop().fadeOut('fast');
+      $toTop.stop().fadeIn();
+      return;
+    } 
+    $toTop.stop().fadeOut('fast');
+    $('#compose').stop().fadeIn();
   });
 
+  //enable textarea input field when button is clicked
   $toTop.on('click', () => {
-    $('html, body').animate({
-      scrollTop: 0
-    }, 700);
+    $('html, body').animate({ scrollTop: 0 }, 700);
+    $('.new-tweet').slideDown("slow");
     $('#tweet-text').focus();
   });
 
